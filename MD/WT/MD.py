@@ -21,7 +21,7 @@ from ase.constraints import FixAtoms
 import os
 
 mp = MP(parallel=True)
-atoms = read('/projectsn/mp1009_1/Valeria/Batteries/Li2S_interface/QE/PBE_SC/Li40/rho_ks_gbrv_1.xsf')
+atoms = read('../QE/DEN/rho_ks_gbrv_1.xsf')
 atoms = atoms.repeat((4, 4, 1))
 ions = Ions.from_ase(atoms)
 z_thresh = 42
@@ -37,9 +37,9 @@ atoms.set_constraint(constraint)
 
 # ions, rho_target, _ = io.read_all('/projectsn/mp1009_1/Valeria/Batteries/Li2S_interface/QE/PBE_SC/Li40/rho_ks_gbrv_1.xsf')
 grid = DirectGrid(ions.cell, mp=mp, ecut=50, full=True)
-PP_list = {'S': '/projectsn/mp1009_1/Valeria/Batteries/Li2S_interface/OF/PP/S_OEPP_PZ.UPF',
-          'Li': '/projectsn/mp1009_1/Valeria/Batteries/Li2S_interface/OF/PP/Li_OEPP_PZ.UPF',
-          'P' : '/projectsn/mp1009_1/Valeria/Batteries/Li2S_interface/OF/PP/P_OEPP_PZ.UPF'}
+PP_list = {'S': '../OF/PP/S_OEPP_PZ.UPF',
+          'Li': '../OF/PP/Li_OEPP_PZ.UPF',
+          'P' : '../OF/PP/P_OEPP_PZ.UPF'}
 
 PSEUDO = Functional(type='PSEUDO', grid=grid, ions=ions, PP_list=PP_list)
 XC = Functional(type='XC',name='PBE')
