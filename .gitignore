@@ -1,0 +1,49 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build / packaging artifacts  (these are currently committed in aiWT)
+build/
+dist/
+develop-eggs/
+.eggs/
+eggs/
+sdist/
+wheels/
+*.egg-info/
+*.egg
+_version.py.bak
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Jupyter  (currently committed in OFPP)
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Common simulation outputs -- keep inputs, ignore bulk output
+*.wfc*
+*.save/
+*.mix*
+*.igk*
+tmp/
+scratch/
